@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:hp_customer/profile.dart';
+import 'package:hp_customer/home.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<ProfilePage> createState() => _ProfilePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  int currentPage = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('ClaimReady+'),
+class _ProfilePageState extends State<ProfilePage> {
+@override
+Widget build(BuildContext context) {
+  int currentPage = 1;
+  return Scaffold(
+    appBar: AppBar(
+        title: const Text('Profile'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -34,18 +33,19 @@ class _HomePageState extends State<HomePage> {
             currentPage = index; 
             print(currentPage);
           });
-           if (index == 1) {
+           if (index == 0) {
            Navigator.push( 
               context,
               MaterialPageRoute(
-                builder: (context) => ProfilePage(),
+                builder: (context) => HomePage()
         ),
-      ); 
+      );
+            
           }
         },
         selectedIndex: currentPage,
       ),
-    );
+    body: Center(child: Text("gay"))
+  );
   }
 }
-
