@@ -30,12 +30,11 @@ class _MyreportsPageState extends State<MyreportsPage> {
           Padding(
             padding: const EdgeInsets.all(25.0), // Padding for the whole ListView
             child: ElevatedButton(
-              onPressed: _launchURL, // Call the function to launch the URL
-              child: const Text('Report From "MM/DD/YYYY"'),
+              onPressed: _launchURL,
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(100, 75),
-                foregroundColor: Colors.black,
-              ),
+                foregroundColor: Colors.black,), 
+              child: const Text('Report From "MM/DD/YYYY"'),
             ),
           ),
         ],
@@ -45,7 +44,7 @@ class _MyreportsPageState extends State<MyreportsPage> {
 }
 
 class _Report extends StatelessWidget {
-  const _Report({super.key});
+  const _Report();
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +52,7 @@ class _Report extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Report from MM/DD/YYYY'),
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           'insert Hyperlink to report',
           style: TextStyle(fontSize: 18),
